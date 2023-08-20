@@ -5,7 +5,14 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <div className="button-test">버튼</div>
+      <div
+        onClick={() => {
+          console.log("button");
+        }}
+        className="button-test"
+      >
+        버튼
+      </div>
     </div>
   );
 }
