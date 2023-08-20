@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ReactGA from "react-ga";
 
 const TestPage = () => {
   const navigate = useNavigate();
@@ -9,6 +10,11 @@ const TestPage = () => {
         className="button-test"
         onClick={() => {
           console.log("button-test");
+          ReactGA.event({
+            category: "버튼",
+            action: "클릭",
+            label: "예제 버튼",
+          });
         }}
       >
         button
