@@ -1,20 +1,17 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import { useEffect, useState } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
+import HomePage from "./page/HomePage";
+import TestPage from "./page/TestPage";
 
-function App() {
+const Router = () => {
   return (
-    <div className="App">
-      <div
-        onClick={() => {
-          console.log("button");
-        }}
-        className="button-test"
-      >
-        버튼
-      </div>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/test" element={<TestPage />} />
+      </Routes>
+    </>
   );
-}
+};
 
-export default App;
+export default Router;
