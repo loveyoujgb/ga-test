@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 const TestPage = () => {
   const navigate = useNavigate();
@@ -11,9 +11,12 @@ const TestPage = () => {
         onClick={() => {
           console.log("button-test");
           ReactGA.event({
-            category: "버튼",
-            action: "클릭",
-            label: "예제 버튼",
+            action: "hello-action",
+            category: "test-category",
+            label: "test-label", // optional
+            value: 1, // optional, must be a number
+            nonInteraction: true, // optional, true/false
+            transport: "xhr", // optional, beacon/xhr/image
           });
         }}
       >
